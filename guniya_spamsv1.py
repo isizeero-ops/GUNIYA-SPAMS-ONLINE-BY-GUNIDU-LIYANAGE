@@ -20,6 +20,28 @@ Y = "\033[1;33m"  # Warning Yellow
 C = "\033[1;36m"  # Info Cyan
 W = "\033[0m"     # Reset
 
+# ======================================================
+# PASSWORD / LOGIN SYSTEM (Added)
+# ======================================================
+CORRECT_PASSWORD = "movindi"
+
+print(f"{G}======================================================")
+print(f"{Y}          ⚡ SECURITY LOGIN REQUIRED ⚡          ")
+print(f"{G}======================================================{W}")
+
+# User ගෙන් password එක ඉල්ලීම (ටයිප් කරද්දී පේන්නේ නැති වෙන්න නෙවෙයි, සාමාන්‍ය input එකක් විදිහට)
+user_password = input(f"{C}[?] ENTER LOGIN PASSWORD: {W}")
+
+if user_password != CORRECT_PASSWORD:
+    print(f"\n{R}[-[ ❌ ACCESS DENIED: INVALID PASSWORD ]-{W}")
+    time.sleep(1)
+    sys.exit()
+else:
+    print(f"\n{G}[+] ACCESS GRANTED! DECRYPTING SYSTEM...{W}")
+    time.sleep(1.5)
+    os.system('clear')
+# ======================================================
+
 # Massive ASCII Banner
 print(f"{G}======================================================")
 print(r"  ________ ____  _____  _ __  _       _       ")
@@ -79,7 +101,7 @@ for i in range(total_msg):
             print(f"{G}[{i+1:02d}] [{fake_token}] DISPATCHED -> TARGET ACQUIRED [HTTP 200 OK]{W}")
             success_count += 1
         else:
-            print(f"{R}[{i+1:02d}] [{fake_token}] REJECTED -> SERVER DROPPED [HTTP {response.status_code}]{W}")
+            print(f"{R}[{i+1:02d}] [{fake_token}] REJECTED -> SERVER DROPPED [HTTP {response.status_code}]{W}]{W}")
             
     except Exception as e:
         print(f"{R}[!] CONNECTION BREACH -> RETRYING: {e}{W}")
