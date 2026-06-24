@@ -26,7 +26,7 @@ W = "\033[0m"     # Reset
 CORRECT_PASSWORD = "movindi"
 
 print(f"{G}======================================================")
-print(f"{Y}          ⚡ SECURITY LOGIN REQUIRED ⚡          ")
+print(f"{Y}        LOGIN TO ACCSESS SPAM MODULE       ")
 print(f"{G}======================================================{W}")
 
 # User ගෙන් password එක ඉල්ලීම (ටයිප් කරද්දී පේන්නේ නැති වෙන්න නෙවෙයි, සාමාන්‍ය input එකක් විදිහට)
@@ -49,8 +49,8 @@ print(r" / ___/  |/  / |/ / _ \| |  \| |     /_\      ")
 print(r"/ (_ / /|_/ /    / // /| | |\  |    / _ \     ")
 print(r"\___/_/  /_/_/|_/_/ /_/|_|_| \_|   /_/ \_\    ")
 print(f"======================================================")
-print(f" >> CORE SYSTEM: GUNIYA SPAMS ENGINE v2.0 <<          ")
-print(f" >> SECURITY LEVEL: UNRESTRICTED OVERRIDE <<          ")
+print(f" >>  GUNIYA SPAMS #NO.1 SRI LANKA v1.0 <<          ")
+print(f" >> BY GUNIDU LIYANAGE <<          ")
 print(f"======================================================{W}")
 
 # Target Settings
@@ -97,16 +97,18 @@ for i in range(total_msg):
         
         response = requests.get(url)
         
+        # Syntax Errors Fixed (response.status_code and success_count tracking)
         if response.status_code == 200:
-            print(f"{G}[{i+1:02d}] [{fake_token}] DISPATCHED -> TARGET ACQUIRED [HTTP 200 OK]{W}")
+            print(f"{G}[{i+1:02d}] [{fake_token}] SENDING SPAMS MSG{W}")
             success_count += 1
         else:
-            print(f"{R}[{i+1:02d}] [{fake_token}] REJECTED -> SERVER DROPPED [HTTP {response.status_code}]{W}]{W}")
+            print(f"\n{R}[{i+1:02d}] [{fake_token}] REJECTED -> SERVER DROPPED [HTTP {response.status_code}]{W}")
             
     except Exception as e:
-        print(f"{R}[!] CONNECTION BREACH -> RETRYING: {e}{W}")
+        print(f"\n{R}[!] CONNECTION BREACH -> RETRYING: {e}{W}")
         
-    time.sleep(1.2)
+    # Sleep timer modified to 0.1 seconds
+    time.sleep(0.1)
 
 # Timer End
 end_time = time.time()
@@ -118,3 +120,4 @@ print(f"{C}[+] PROCESS TERMINATED SUCCESSFULLY.{W}")
 print(f"{G}[+] TOTAL SUCCESSFUL INJECTIONS: {success_count}/{total_msg}{W}")
 print(f"{G}[+] TOTAL TIME ELAPSED: {duration} SECONDS{W}")
 print(f"{G}======================================================{W}")
+
